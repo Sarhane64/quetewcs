@@ -1,6 +1,19 @@
-import PropTypes from 'prop-types'
+/* eslint-disable react/prop-types */
+  
 
-const Navbar = ({next, precedent}) => {
+const Navbar = ({indexPokemon, setIndexPokemon,pokemonList}) => {
+    
+    const next = () => {
+        if(indexPokemon < pokemonList.length - 1) {
+          setIndexPokemon((current => current + 1))
+        }
+        
+    }
+      const precedent = () => {
+        if(indexPokemon > 0) {
+          setIndexPokemon((current => current - 1))
+        }
+      }
     return (
         <div>
             <button onClick={next} >Next</button>
@@ -9,9 +22,6 @@ const Navbar = ({next, precedent}) => {
     );
 };
 
-Navbar.propTypes = {
-    next : PropTypes.func,
-    precedent : PropTypes.func
-}
+
 
 export default Navbar;
