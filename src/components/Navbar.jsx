@@ -1,5 +1,14 @@
+import { useEffect } from "react";
+
 /* eslint-disable react/prop-types */
-const Navbar = ({ setIndexPokemon, pokemonList }) => {
+const Navbar = ({ setIndexPokemon, pokemonList,indexPokemon }) => {
+
+  useEffect(() => {
+    if(indexPokemon === 3) {
+      alert("pikachu")
+    }
+  },[indexPokemon, pokemonList]);
+
   return (
     <div>
       {pokemonList.map((pokemon, index) => (
@@ -14,4 +23,5 @@ const Navbar = ({ setIndexPokemon, pokemonList }) => {
 };
 
 export default Navbar;
+
 
